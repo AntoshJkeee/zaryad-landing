@@ -1,9 +1,5 @@
 .header {
-  padding: 22px;
+  @include flex-center;
 
-  &__nav-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  padding: 20px;
 }

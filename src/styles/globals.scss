@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  @include fluid-text(20, 12);
+  min-height: 100vh;
   background-color: var(--black);
   color: var(--white);
   text-transform: uppercase;
@@ -82,6 +82,46 @@ a {
   &[class] {
     text-decoration: none;
   }
+}
+
+button {
+  background: unset;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+  //height: calc(100vh - (var(--header-height) + var(--footer-height)));
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  column-gap: 10px;
+  width: 100%;
+  justify-content: center;
+  //-moz-column-gap: .625rem;
+  overflow: hidden;
+  height: 100%;
+  align-items: center;
+}
+
+aside {
+  padding: 20px;
+}
+
+.glitch-class:hover {
+  animation: glitch 0.3s infinite linear;
+}
+
+@keyframes glitch {
+  0% { filter: drop-shadow(3px 3px red) drop-shadow(-3px -3px blue); }
+  50% { filter: drop-shadow(-3px 3px blue) drop-shadow(3px -3px red); }
+  100% { filter: drop-shadow(3px -3px red) drop-shadow(-3px 3px blue); }
 }
 
 :has(.swiper) {

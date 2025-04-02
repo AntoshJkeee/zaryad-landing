@@ -1,2 +1,2 @@
-export * from './getHeaderHeight'
+export * from './getStaticHeight'
 export * from './pxToRem'
