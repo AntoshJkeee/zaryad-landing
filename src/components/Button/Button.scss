@@ -1,0 +1,252 @@
+.button {
+  $self: &;
+
+  display: inline-block;
+
+  width: fit-content;
+  height: 48px;
+
+  padding-inline: 16px;
+
+  cursor: pointer;
+
+  transition: background-color, color;
+  transition-timing-function: ease;
+  transition-duration: 300ms;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--white);
+  border-radius: var(--border-radius-s);
+  background: var(--red);
+
+  @include fluid-text(14, 14);
+  font-weight: 700;
+  line-height: 1;
+
+  // stylelint-disable-next-line order/order
+  &:hover {
+    background: var(--red2);
+  }
+
+  &:focus,
+  &:focus-visible {
+    padding-inline: fluid(15, 15);
+
+    border: 1px solid var(--black);
+    outline: none;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: var(--black);
+  }
+
+  &:disabled,
+  &[disabled],
+  &_disabled {
+    cursor: default;
+
+    pointer-events: none;
+
+    opacity: 0.3;
+  }
+
+  // ---------- Модификаторы цвета кнопок ---------- //
+
+  &_secondary {
+    padding-inline: fluid(15, 15);
+
+    color: var(--black);
+    // stylelint-disable-next-line value-keyword-case
+    border: var(--border-width-s) solid currentColor;
+    background-color: transparent;
+
+    &:hover {
+      color: var(--red);
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:focus-visible {
+      color: var(--red);
+      // stylelint-disable-next-line value-keyword-case
+      border-color: currentColor;
+      outline: none;
+    }
+
+    &:active,
+    &.is-active {
+      color: var(--red2);
+      border-color: var(--red2);
+      background-color: transparent;
+    }
+  }
+
+  // ---------- Модификаторы размера кнопок ---------- //
+
+  &_s {
+    height: 28px;
+
+    @include fluid-text(12, 12);
+    padding-inline: fluid(12, 12);
+
+    #{$self}__icon {
+      @include square(12px)
+    }
+  }
+
+  &_m {
+    height: 32px;
+
+    @include fluid-text(12, 12);
+    padding-inline: fluid(12, 12);
+  }
+
+  &_l {
+    height: 40px;
+  }
+
+  // ---------- Модификаторы типов кнопок ---------- //
+  &_with-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+
+    #{$self}__icon {
+      @include square(16px)
+    }
+  }
+
+  &_back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+
+    #{$self}__icon {
+      @include square(16px)
+    }
+
+    &:hover {
+      color: var(--black);
+      background-color: var(--white);
+    }
+
+    &:focus,
+    &:focus-visible {
+      color: var(--black);
+
+      border: 1px solid var(--black);
+      outline: none;
+      background-color: var(--white);
+      padding-inline: 11px;
+    }
+
+    &:active,
+    &.is-active {
+      color: var(--black);
+
+      outline: none;
+      background-color: var(--white);
+    }
+  }
+
+  &_social {
+    @include square(40px);
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    &_icon {
+      @include square(100%);
+    }
+  }
+
+  &_menu {
+    @include flex-center();
+
+    color: var(--gray3);
+    background-color: transparent;
+
+    #{$self}__icon {
+      @include square(16px)
+    }
+
+    &:hover {
+      color: var(--black);
+      background-color: var(--gray2);
+    }
+
+    &:focus,
+    &:focus-visible {
+      color: var(--black);
+
+      border: 1px solid var(--black);
+      outline: none;
+      background-color: var(--gray2);
+      padding-inline: 15px;
+    }
+
+    &:active,
+    &.is-active {
+      color: var(--white);
+
+      outline: none;
+      background-color: var(--black);
+
+      #{$self}__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &_menu-white {
+    color: var(--white);
+  }
+
+  &_menu-secondary {
+    color: var(--black);
+  }
+
+  &_menu-secondary,
+  &_menu-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90px;
+    padding: 0;
+
+    background-color: transparent;
+
+    #{$self}__icon {
+      @include square(16px)
+    }
+
+    &:hover {
+      color: var(--red);
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:focus-visible {
+      padding: 0;
+
+      color: var(--red);
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
+
+    &:active,
+    &.is-active {
+      color: var(--red2);
+
+      outline: none;
+      background-color: transparent;
+    }
+  }
+}

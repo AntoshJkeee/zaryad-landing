@@ -1,0 +1,55 @@
+@use 'constants' as *;
+@use 'sass:math';
+
+/**
+ * Удаляет единицу измерения из числа в SCSS.
+ *
+ * @function strip-unit
+ * @param {number} $number - Число с единицей измерения (например, 42px)
+ * @return {number} Число без единицы измерения
+ * @example
+ * strip-unit(42px) // -> 42
+ * strip-unit(30rem) // -> 30
+ */
+@function strip-unit($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+/**
+ * Создает функцию для плавного масштабирования значения в зависимости от ширины viewport.
+ *
+ * @function fluid
+ * @param {number} $maxValue - Максимальное значение элемента в пикселях в десктопной версии (по умолчанию: 100)
+ * @param {number} $minValue - Минимальное значение элемента в пикселях в мобильной версии (по умолчанию: 10)
+ * @param {boolean} $isEndOfLaptop - Флаг для использования ширины laptop как минимальной (по умолчанию: false)
+ * @return {string} CSS функция clamp() с вычисленными значениями
+ *
+ * @example
+ * fluid(24, 16)
+ */
+@function fluid($maxValue: 100, $minValue: 10, $isEndOfLaptop: false) {
+  $maxViewportWidth: $max;
+  $minViewportWidth: $min;
+
+  @if ($isEndOfLaptop) {
+    $minViewportWidth: $laptop;
+  }
+
+  $maxSize: math.div(strip-unit($maxValue), 16);
+  $minSize: math.div(strip-unit($minValue), 16);
+  $maxWidth: math.div(strip-unit($maxViewportWidth), 16);
+  $minWidth: math.div(strip-unit($minViewportWidth), 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersections: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+      #{$minSize * 1rem},
+      #{$yAxisIntersections * 1rem} + #{$slope * 100vw},
+      #{$maxSize * 1rem}
+  );
+}
+
+@function fluid-to-laptop($maxValue: 100, $minValue: 10) {
+  @return fluid($maxValue, $minValue, true)
+}
