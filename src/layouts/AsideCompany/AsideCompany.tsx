@@ -2,7 +2,7 @@ import './AsideCompany.scss'
 
 export const AsideCompany = () => {
 	return (
-		<aside>
+		<aside className="aside-company">
 			<button>Zaryad !!!</button>
 		</aside>
 	)

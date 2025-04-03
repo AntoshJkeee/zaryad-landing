@@ -2,7 +2,7 @@ import './AsideContacts.scss'
 
 export const AsideContacts = () => {
 	return (
-		<aside>
+		<aside className="aside-contacts">
 			<button>Контакты</button>
 		</aside>
 	)
