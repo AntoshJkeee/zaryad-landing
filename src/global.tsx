@@ -1,9 +1,9 @@
 import '@/styles'
 import { Head } from 'minista'
 import type { PageProps } from 'minista'
-// import { Header, Footer } from '@/layouts'
-// import { AsideCompany } from '@/layouts/AsideCompany/AsideCompany'
-// import { AsideContacts } from '@/layouts/AsideContacts/AsideContacts'
+import { Header, Footer } from '@/layouts'
+import { AsideCompany } from '@/layouts/AsideCompany/AsideCompany'
+import { AsideContacts } from '@/layouts/AsideContacts/AsideContacts'
 
 export default (props: PageProps) => {
 	const { children, title, listPages } = props
@@ -25,13 +25,13 @@ export default (props: PageProps) => {
 
 			{!listPages ? (
 				<>
-					{/*<Header />*/}
+					<Header />
 					<main>
-						{/*<AsideCompany />*/}
+						<AsideCompany />
 						{children}
-						{/*<AsideContacts />*/}
+						<AsideContacts />
 					</main>
-					{/*<Footer />*/}
+					<Footer />
 				</>
 			) : (
 				<>{children}</>

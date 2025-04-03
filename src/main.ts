@@ -1,8 +1,8 @@
-// import { getStaticHeight } from '@/utils/helpers'
+import { getStaticHeight } from '@/utils/helpers'
 import { AnimateLogo } from '@/utils/modules/AnimateLogo'
 
 document.addEventListener('DOMContentLoaded', () => {
-	// getStaticHeight()
+	getStaticHeight()
 	AnimateLogo()
 
 	// if (document.querySelector('[data-js-overlay-menu]')) {
