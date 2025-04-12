@@ -1,3 +1,5 @@
 .aside-contacts {
-	visibility: hidden;
+	padding: 20px;
+	position: relative;
+	right: calc(var(--aside-contacts-width) * -1);
 }

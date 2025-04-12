@@ -111,14 +111,14 @@ section {
   right: 0;
   bottom: 0;
   top: 0;
-  // margin-block: 40px;
+  padding-inline: 160px;
 }
 
 aside {
   padding: 20px;
 }
 
-.glitch-class:hover {
+.glitch-class {
   animation: glitch 0.3s infinite linear;
 }
 

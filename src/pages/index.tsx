@@ -13,11 +13,11 @@ export default () => {
 	return (
 		<>
 			<section>
-				<LetterZ className="letter" />
-				<LetterA className="letter" />
-				<LetterR className="letter" />
-				<LetterYA className="letter" />
-				<LetterD className="letter" />
+				<LetterZ className="letter glitch-class" />
+				<LetterA className="letter glitch-class" />
+				<LetterR className="letter glitch-class" />
+				<LetterYA className="letter glitch-class" />
+				<LetterD className="letter glitch-class" />
 			</section>
 		</>
 	)

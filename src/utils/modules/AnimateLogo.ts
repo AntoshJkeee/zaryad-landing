@@ -11,7 +11,7 @@ export const AnimateLogo = () => {
 			scaleY: window.innerHeight / 100,  // Динамическое растяжение
 			// yPercent: 100,
 			stagger: 0.3,
-			duration: 2.5,
+			duration: 1.0, // was 2.5
 			ease: 'power2.inOut',
 			onComplete: () => {
 				letters.forEach((letter) => {
@@ -24,10 +24,41 @@ export const AnimateLogo = () => {
 			duration: 1,
 			ease: 'power2.inOut',
 		})
-		.to(["header", "aside-contacts", "aside-company", "footer"], {
-			top: 0,
-			duration: 1,
-      		ease: 'power2.inOut',
-      		stagger: 0.3
-		});
+		animateHeader()
+		animateAsideContacts()
+		animateAsideCompany()
+		animateFooter()
+}
+
+const duration = 2.7
+const animateHeader = () => {
+	gsap.to('.header', {
+		top: 0,
+		duration,
+		ease: 'power2.inOut',
+	})
+}
+
+const animateAsideContacts = () => {
+	gsap.to('.aside-contacts', {
+		right: 0,
+		duration,
+		ease: 'power2.inOut',
+	})
+}
+
+const animateAsideCompany = () => {
+	gsap.to('.aside-company', {
+		left: 0,
+		duration,
+		ease: 'power2.inOut',
+	})
+}
+
+const animateFooter = () => {
+	gsap.to('.footer', {
+		bottom: 0,
+		duration,
+		ease: 'power2.inOut',
+	})
 }
