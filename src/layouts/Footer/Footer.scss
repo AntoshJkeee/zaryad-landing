@@ -2,5 +2,6 @@
 	@include flex-center;
 
 	padding: 20px;
-	visibility: hidden;
+	position: relative;
+	bottom: calc(var(--footer-height) * -1);
 }

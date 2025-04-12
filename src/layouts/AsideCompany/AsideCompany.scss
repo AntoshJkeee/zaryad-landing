@@ -1,3 +1,5 @@
 .aside-company {
-	visibility: hidden;
+	padding: 20px;
+	position: relative;
+	left: calc(var(--aside-company-width) * -1);
 }

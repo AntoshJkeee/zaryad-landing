@@ -3,7 +3,7 @@ import './AsideCompany.scss'
 export const AsideCompany = () => {
 	return (
 		<aside className="aside-company">
-			<button>Zaryad !!!</button>
+			<button>ЗАРЯД</button>
 		</aside>
 	)
 }
