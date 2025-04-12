@@ -111,23 +111,41 @@ section {
   right: 0;
   bottom: 0;
   top: 0;
-  // margin-block: 40px;
+  padding-inline: 160px;
 }
 
 aside {
   padding: 20px;
 }
 
-.glitch-class:hover {
-  animation: glitch 0.3s infinite linear;
-}
-
-@keyframes glitch {
-  0% { filter: drop-shadow(3px 3px red) drop-shadow(-3px -3px blue); }
-  50% { filter: drop-shadow(-3px 3px blue) drop-shadow(3px -3px red); }
-  100% { filter: drop-shadow(3px -3px red) drop-shadow(-3px 3px blue); }
-}
-
 :has(.swiper) {
   min-width: 0;
 }
+
+// Glitch
+.glitch {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+}
+
+.glitch-bottom {
+ -webkit-clip-path: inset(58% 0 0 0);
+ clip-path: inset(58% 0 0 0);
+}
+
+.glitch-top {
+  -webkit-clip-path: inset(0 0 41% 0);
+ clip-path: inset(0 0 41%);
+}
+
+.glitch-police {
+  animation: glitchPolice 0.3s infinite linear;
+}
+
+@keyframes glitchPolice {
+  0% { filter: drop-shadow(5px 5px var(--orange)) drop-shadow(-5px -5px var(--blue)); }
+  50% { filter: drop-shadow(-5px 5px var(--blue)) drop-shadow(5px -5px var(--orange)); }
+  100% { filter: drop-shadow(5px -5px var(--orange)) drop-shadow(-5px 5px var(--blue)); }
+}
+// Glitch
