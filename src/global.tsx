@@ -4,6 +4,7 @@ import type { PageProps } from 'minista'
 import { Header, Footer } from '@/layouts'
 import { AsideCompany } from '@/layouts/AsideCompany/AsideCompany'
 import { AsideContacts } from '@/layouts/AsideContacts/AsideContacts'
+import { LoadingScreen } from '@/layouts/LoadingScreen/LoadingScreen'
 
 export default (props: PageProps) => {
 	const { children, title, listPages } = props
@@ -27,6 +28,7 @@ export default (props: PageProps) => {
 				<>
 					<Header />
 					<main>
+						<LoadingScreen />
 						<AsideCompany />
 						{children}
 						<AsideContacts />

@@ -26,17 +26,18 @@ export const AnimateLogo = () => {
 			duration: 1,
 			ease: 'power2.inOut',
 		})
+		animateGlitch()
 		animateHeader()
 		animateAsideContacts()
 		animateAsideCompany()
 		animateFooter()
-		animateGlitch()
 }
 
 const animateGlitch = () => {
 	var tl = gsap.timeline({repeat: 1, repeatDelay: 2});
 
 	tl.to('.glitch', {
+		opacity: 1,
 		duration: 0.1,
 		skewX: 70,
 		ease: 'power4.inOut'
