@@ -13,19 +13,22 @@ export default () => {
 	return (
 		<>
 			<section>
-				<div className="glitch glitch-top">
-					<LetterZ className="letter glitch-police" />
-					<LetterA className="letter glitch-police" />
-					<LetterR className="letter glitch-police" />
-					<LetterYA className="letter glitch-police" />
-					<LetterD className="letter glitch-police" />
+				<div className="content company-content">
+					<p>Some info about company</p>
+					<p>Bla bla bla</p>
+					<p>Bla bla bla</p>
 				</div>
-				<div className="glitch glitch-bottom">
-					<LetterZ className="letter glitch-police" />
-					<LetterA className="letter glitch-police" />
-					<LetterR className="letter glitch-police" />
-					<LetterYA className="letter glitch-police" />
-					<LetterD className="letter glitch-police" />
+				<div className="glitch logo">
+					<LetterZ className="letter" />
+					<LetterA className="letter" />
+					<LetterR className="letter" />
+					<LetterYA className="letter" />
+					<LetterD className="letter" />
+				</div>
+				<div className="content company-contacts">
+					<p>Some info about contacts</p>
+					<p>Bla bla bla</p>
+					<p>Bla bla bla</p>
 				</div>
 			</section>
 		</>

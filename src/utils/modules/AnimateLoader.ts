@@ -1,7 +1,7 @@
 // @ts-nocheck
 import gsap from 'gsap'
 import { AnimateLogo } from '@/utils/modules/AnimateLogo'
-
+import { AnimateNav } from '@/utils/modules/AnimateNav'
 export const AnimateLoader = () => {
 	const counter3 = document.querySelector('.counter-3')
 
@@ -104,6 +104,7 @@ export const AnimateLoader = () => {
 		ease: 'power1.inOut',
 		onComplete: () => {
 			AnimateLogo()
+			AnimateNav()
 		},
 	})
 }
